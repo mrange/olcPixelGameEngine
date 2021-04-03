@@ -3709,6 +3709,9 @@ namespace olc
 
 			// Load & Compile Quad Shader - assumes no errors
 			m_nFS = locCreateShader(0x8B30);
+#ifdef OLC_CUSTOM_FRAGMENT_SHADER
+			const GLchar* strFS = OLC_CUSTOM_FRAGMENT_SHADER;
+#else
 			const GLchar* strFS =
 #if defined(__arm__) || defined(OLC_PLATFORM_EMSCRIPTEN)
 				"#version 300 es\n"
@@ -3718,6 +3721,7 @@ namespace olc
 #endif
 				"out vec4 pixel;\n""in vec2 oTex;\n"
 				"in vec4 oCol;\n""uniform sampler2D sprTex;\n""void main(){pixel = texture(sprTex, oTex) * oCol;}";
+#endif
 			locShaderSource(m_nFS, 1, &strFS, NULL);
 			locCompileShader(m_nFS);
 

@@ -1,0 +1,19 @@
+#pragma once
+
+#include <algorithm>
+#include <array>
+#include <atomic>
+#include <chrono>
+#include <cmath>
+#include <cstdint>
+#include <cstring>
+#include <fstream>
+#include <functional>
+#include <iostream>
+#include <list>
+#include <map>
+#include <sstream>
+#include <streambuf>
+#include <string>
+#include <thread>
+#include <vector>
